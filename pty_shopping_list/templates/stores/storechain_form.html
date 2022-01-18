@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <form action="{% url 'stores:create-chain-store' %}" method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-12">
+        {{ form | crispy }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" id="save_button">{% trans 'Save' %}</button>
+      </div>
+    </div>
+
+  </form>
+{% endblock %}
