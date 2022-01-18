@@ -1,10 +1,9 @@
-from django import  forms
+from django import forms
 
 from pty_shopping_list.stores.models import StoreChain
 
 
 class StoreChainForm(forms.ModelForm):
-
     class Meta:
         model = StoreChain
-        fields = ('id', 'name', )
+        fields = ('id', 'name', 'closed_on')
