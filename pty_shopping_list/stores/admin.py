@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Chain
+from .models import StoreChain
 
 
 # Register your models here.
-@admin.register(Chain)
+@admin.register(StoreChain)
 class ChainAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'metadata')
+    list_display = ('id', 'name', 'metadata', 'is_active', 'closed_on')
+    list_editable = ('closed_on',)
