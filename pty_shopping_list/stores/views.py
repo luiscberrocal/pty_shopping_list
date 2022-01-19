@@ -13,4 +13,5 @@ class StoreChainCreateView(CreateView):
     success_url = '/'
 
 
+
 store_chain_create_view = StoreChainCreateView.as_view()
