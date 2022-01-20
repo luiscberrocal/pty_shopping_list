@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block content %}
+    <h1 data-cy="delete-title">{% trans 'Confirm delete' %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            {% blocktrans with id=object.id %}
+                Are you sure you want to delete"?{% endblocktrans %}</p>
+
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" value="{% trans 'Confirm' %}" class="btn btn-danger" id="delete-btn" data-cy="submit">
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}
