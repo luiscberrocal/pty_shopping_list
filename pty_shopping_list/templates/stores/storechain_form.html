@@ -3,7 +3,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <form action="{% url 'stores:create-chain-store' %}" method="post">
+  <h3>Store Chain</h3>
+  <form action="{% url 'stores:create-store-chain' %}" method="post">
     {% csrf_token %}
     <div class="row">
       <div class="col-12">
