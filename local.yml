@@ -28,7 +28,7 @@ services:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
     image: pty_shopping_list_production_postgres
-    container_name: postgres
+    container_name: postgres_pty_shopping_list
     volumes:
       - local_postgres_data:/var/lib/postgresql/data:Z
       - local_postgres_data_backups:/backups:z
@@ -53,7 +53,7 @@ services:
 
   redis:
     image: redis:6
-    container_name: redis
+    container_name: redis_pty_shopping_list
 
   celeryworker:
     <<: *django
