@@ -30,7 +30,7 @@ store_chain_update_view = StoreChainUpdateView.as_view()
 class StoreChainListView(LoginRequiredMixin, ListView):
     model = StoreChain
     context_object_name = 'store_chain_list'
-    paginate_by = 10
+    paginate_by = 5
 
 
 store_chain_list_view = StoreChainListView.as_view()
