@@ -12,8 +12,19 @@ class StoreChain(TimeStampedModel):
 
     @property
     def is_active(self):
-       return self.closed_on is None
+        return self.closed_on is None
 
     def __str__(self):
         return f'{self.name} -  {self.is_active}'
+
+
+class Location(TimeStampedModel):
+    store_chain = models.ForeignKey(StoreChain, verbose_name=_('Store chain'),
+                                    on_delete=models.PROTECT, related_name='locations')
+    name = models.CharField(_('Name'), max_length=80)
+    address = models.TextField(_('Address'), null=True, blank=True)
+
+
+
+
 

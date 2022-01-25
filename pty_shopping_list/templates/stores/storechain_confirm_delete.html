@@ -3,19 +3,20 @@
 {% load i18n %}
 
 {% block content %}
-    <h1 data-cy="delete-title">{% trans 'Confirm delete' %}</h1>
-    <form method="post">
-        {% csrf_token %}
-        <p>
-            {% blocktrans with id=object.id %}
-                Are you sure you want to delete"?{% endblocktrans %}</p>
+  <h1 data-cy="delete-title">{% trans 'Confirm delete' %}</h1>
+  <form method="post">
+    {% csrf_token %}
+    <p>
+      {% blocktrans with id=object.id %}
+        Are you sure you want to delete"?{% endblocktrans %}</p>
+    {% include 'stores/snippets/detail_data.html' %}
+    <div class="control-group">
+      <div class="controls">
+        <a href="{% url 'stores:list-store-chain' %}" class="btn btn-primary">{% trans 'Cancel' %}</a>
+        <input type="submit" value="{% trans 'Confirm' %}" class="btn btn-danger" id="delete-btn" data-cy="submit">
+      </div>
+    </div>
 
-        <div class="control-group">
-            <div class="controls">
-                <input type="submit" value="{% trans 'Confirm' %}" class="btn btn-danger" id="delete-btn" data-cy="submit">
-            </div>
-        </div>
-
-    </form>
+  </form>
 
 {% endblock %}
