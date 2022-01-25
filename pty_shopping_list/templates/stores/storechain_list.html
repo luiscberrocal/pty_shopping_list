@@ -13,7 +13,9 @@
         {{ store_chain.is_active }}
       </div>
       <div class="col-2">
-        <a href="{% url 'stores:delete-store-chain' store_chain.pk %}" class="btn btn-danger btn-sm">Delete</a>
+        <a href="{% url 'stores:delete-store-chain' store_chain.pk %}" class="btn btn-danger btn-sm">{% trans 'Delete' %}</a>
+        <a href="{% url 'stores:update-store-chain' store_chain.pk %}" class="btn btn-success btn-sm">{% trans 'Update' %}</a>
+        <a href="{% url 'stores:detail-store-chain' store_chain.pk %}" class="btn btn-primary btn-sm">{% trans 'View' %}</a>
       </div>
     </div>
   {% endfor %}
