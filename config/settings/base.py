@@ -81,6 +81,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "pty_shopping_list.users",
     "pty_shopping_list.stores.apps.StoresConfig",
+    "pty_shopping_list.products.apps.ProductsConfig"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

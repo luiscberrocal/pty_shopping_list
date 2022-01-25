@@ -14,6 +14,9 @@ class StoreChainCreateView(LoginRequiredMixin, CreateView):
     form_class = StoreChainForm
     success_url = reverse_lazy('stores:list-store-chain')
 
+    def get_context_data(self, **kwargs):
+        ctx = super(StoreChainCreateView, self).get_context_data(**kwargs)
+        return ctx
 
 store_chain_create_view = StoreChainCreateView.as_view()
 
