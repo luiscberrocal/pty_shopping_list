@@ -4,12 +4,5 @@
 
 {% block content %}
   <div class="h3">{% trans 'Store chain' %}</div>
-  <div class="row">
-    <div class="col-2">{% trans 'Id' %}:</div>
-    <div class="col-2">{{ object.id }}</div>
-  </div>
-  <div class="row">
-    <div class="col-2">{% trans 'Name' %}:</div>
-    <div class="col-2">{{ object.name }}</div>
-  </div>
+  {% include 'stores/snippets/detail_data.html' %}
 {% endblock %}
