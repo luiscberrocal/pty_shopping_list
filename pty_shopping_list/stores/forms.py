@@ -7,3 +7,4 @@ class StoreChainForm(forms.ModelForm):
     class Meta:
         model = StoreChain
         fields = ('id', 'name', 'closed_on')
+        widgets = {'closed_on': forms.DateInput(attrs={'type': 'date'})}
