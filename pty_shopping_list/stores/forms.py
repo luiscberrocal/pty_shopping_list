@@ -13,7 +13,7 @@ class StoreChainForm(forms.ModelForm):
         (DRUG_STORE_TYPE, _('Drug store')),
         (OTHER_TYPE, _('Other')),
     )
-    chain_type = forms.ChoiceField(label=_('Chain type'), choices=TYPE_CHOICES,)
+    chain_type = forms.ChoiceField(label=_('Chain type'), choices=TYPE_CHOICES, )
 
     class Meta:
         model = StoreChain
@@ -22,8 +22,8 @@ class StoreChainForm(forms.ModelForm):
                    'metadata': forms.HiddenInput()}
 
     def clean(self):
-        cleaned_data =super(StoreChainForm, self).clean()
-        cleaned_data['metatadata'] = {'chain_type': cleaned_data['chain_type']}
+        cleaned_data = super(StoreChainForm, self).clean()
+        cleaned_data['metadata'] = {'chain_type': cleaned_data['chain_type']}
         return cleaned_data
 
-    #def save(self, force_insert=False, force_update=False):
+    # def save(self, force_insert=False, force_update=False):
