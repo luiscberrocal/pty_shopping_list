@@ -101,7 +101,7 @@
   {% endif %}
 
   {% block content %}
-    <p>Use this document as a way to quick start any new project.</p>
+    <a href="{% url 'stores:list-store-chain' %}" class="btn btn-primary">{% trans 'Store chain List' %}</a>
   {% endblock content %}
 
 </div> <!-- /container -->
