@@ -33,6 +33,7 @@ store_chain_update_view = StoreChainUpdateView.as_view()
 class StoreChainListView(LoginRequiredMixin, ListView):
     model = StoreChain
     context_object_name = 'store_chain_list'
+    template_name = 'stores/storechain.html'
     paginate_by = 5
 
 
