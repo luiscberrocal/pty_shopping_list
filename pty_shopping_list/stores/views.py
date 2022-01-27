@@ -13,6 +13,13 @@ class StoreChainCreateView(LoginRequiredMixin, CreateView):
     form_class = StoreChainForm
     success_url = reverse_lazy('stores:list-store-chain')
 
+    def get(self, request, *args, **kwargs):
+        if request.htmx:
+            ctx = {'form': self.get_form()}
+            template = 'stores/partials/storechain_form.html'
+            return render(request, template, ctx)
+        else:
+            return super(StoreChainCreateView, self).get(request, *args, *kwargs)
 
 
 store_chain_create_view = StoreChainCreateView.as_view()
@@ -55,5 +62,6 @@ class StoreChainDetailView(LoginRequiredMixin, DetailView):
             return render(request, template, ctx)
         else:
             return super(StoreChainCreateView, self).get(request, *args, **kwargs)
+
 
 store_chain_detail_view = StoreChainDetailView.as_view()
