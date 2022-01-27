@@ -8,7 +8,7 @@
         <h3>Store Chains </h3>
       </div>
       <div class="col-4">
-        <a href="" class="btn btn-primary">{% trans 'Add' %}</a>
+        <a href=""  class="btn btn-primary">{% trans 'Add' %}</a>
       </div>
     </div>
     <div class="row">
@@ -26,7 +26,8 @@
                  class="btn btn-danger btn-sm">{% trans 'Delete' %}</a>
               <a href="{% url 'stores:update-store-chain' store_chain.pk %}"
                  class="btn btn-success btn-sm">{% trans 'Update' %}</a>
-              <a href="{% url 'stores:detail-store-chain' store_chain.pk %}"
+              <a hx-get="{% url 'stores:detail-store-chain' store_chain.pk %}"
+                 hx-target="#form-div"
                  class="btn btn-primary btn-sm">{% trans 'View' %}</a>
             </div>
           </div>
@@ -37,6 +38,9 @@
           </div>
         </div>
       </div>
+    <div class="col-6" id="form-div">
+
+    </div>
     </div>
   </div>
 {% endblock %}
